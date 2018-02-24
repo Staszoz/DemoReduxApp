@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		85F0C8182042096900FD5602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C8172042096900FD5602 /* AppDelegate.swift */; };
-		85F0C81A2042096900FD5602 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C8192042096900FD5602 /* ViewController.swift */; };
 		85F0C81D2042096900FD5602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F0C81B2042096900FD5602 /* Main.storyboard */; };
 		85F0C8202042096900FD5602 /* RidersRedux.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C81E2042096900FD5602 /* RidersRedux.xcdatamodeld */; };
 		85F0C8222042096900FD5602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F0C8212042096900FD5602 /* Assets.xcassets */; };
 		85F0C8252042096900FD5602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F0C8232042096900FD5602 /* LaunchScreen.storyboard */; };
 		85F0C8302042096A00FD5602 /* RidersReduxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C82F2042096A00FD5602 /* RidersReduxTests.swift */; };
+		85F0C83D20420C1700FD5602 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C83C20420C1700FD5602 /* TeamsViewController.swift */; };
+		85F0C8402042100600FD5602 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C83F2042100600FD5602 /* State.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,6 @@
 /* Begin PBXFileReference section */
 		85F0C8142042096900FD5602 /* RidersRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RidersRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F0C8172042096900FD5602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		85F0C8192042096900FD5602 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		85F0C81C2042096900FD5602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85F0C81F2042096900FD5602 /* RidersRedux.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RidersRedux.xcdatamodel; sourceTree = "<group>"; };
 		85F0C8212042096900FD5602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		85F0C82B2042096A00FD5602 /* RidersReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RidersReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F0C82F2042096A00FD5602 /* RidersReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidersReduxTests.swift; sourceTree = "<group>"; };
 		85F0C8312042096A00FD5602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85F0C83C20420C1700FD5602 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
+		85F0C83F2042100600FD5602 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +81,9 @@
 		85F0C8162042096900FD5602 /* RidersRedux */ = {
 			isa = PBXGroup;
 			children = (
+				85F0C83E20420FFB00FD5602 /* State */,
+				85F0C83A20420BC200FD5602 /* Presentation */,
 				85F0C8172042096900FD5602 /* AppDelegate.swift */,
-				85F0C8192042096900FD5602 /* ViewController.swift */,
 				85F0C81B2042096900FD5602 /* Main.storyboard */,
 				85F0C8212042096900FD5602 /* Assets.xcassets */,
 				85F0C8232042096900FD5602 /* LaunchScreen.storyboard */,
@@ -97,6 +100,30 @@
 				85F0C8312042096A00FD5602 /* Info.plist */,
 			);
 			path = RidersReduxTests;
+			sourceTree = "<group>";
+		};
+		85F0C83A20420BC200FD5602 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				85F0C83B20420BCD00FD5602 /* Teams */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		85F0C83B20420BCD00FD5602 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				85F0C83C20420C1700FD5602 /* TeamsViewController.swift */,
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
+		85F0C83E20420FFB00FD5602 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				85F0C83F2042100600FD5602 /* State.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85F0C81A2042096900FD5602 /* ViewController.swift in Sources */,
 				85F0C8202042096900FD5602 /* RidersRedux.xcdatamodeld in Sources */,
+				85F0C83D20420C1700FD5602 /* TeamsViewController.swift in Sources */,
 				85F0C8182042096900FD5602 /* AppDelegate.swift in Sources */,
+				85F0C8402042100600FD5602 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

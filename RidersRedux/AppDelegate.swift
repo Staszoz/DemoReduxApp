@@ -17,26 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        let store = Store()
+        
+        
         let controller = ((self.window!.rootViewController as! UINavigationController).topViewController as! TeamsViewController)
-        let presenter = TeamsPresenter(controller: controller)
+        let presenter = TeamsPresenter(controller: controller, store: store)
+        store.addObserver(presenter: presenter)
         
+        store.dispatch(action: BeginLoadingTeam())
         
-        
-        presenter.render(
-            state: State(teamList: [
-                State.Team.Identifier.init(rawValue: "1") : State.Team(name: "vasya", id: "1"),
-                State.Team.Identifier.init(rawValue: "2") : State.Team(name: "petya", id: "1"),
-                State.Team.Identifier.init(rawValue: "3") : State.Team(name: "dima", id: "1")
-                ]
-            )
-        )
-        
-        
-        
+        getURL(url: URL(string: "https://s3.eu-west-2.amazonaws.com/motogpriders/teams.json")!) { (teamsResponse) in
+            store.dispatch(action: CompletedLoadTeams(response: teamsResponse))
+        }
         
         return true
     }
 
+    
+    
     func applicationWillTerminate(_ application: UIApplication) {
         self.saveContext()
     }

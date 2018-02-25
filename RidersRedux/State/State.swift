@@ -10,29 +10,13 @@ import Foundation
 
 
 struct State {
-    let teamList: [Team.Identifier: Team]
-    
-    
-    struct Team {
-        typealias Identifier = GenericIdentifier<Team>
-        
-        let name: String
-        let id: String
-    }
+    let teamList: TeamListState
 }
 
 
-struct GenericIdentifier<T>: RawRepresentable, Hashable, Equatable {
-    var hashValue: Int {
-        return rawValue.hashValue
-    }
-    
-    let rawValue: String
-    init(rawValue: String) {
-        self.rawValue = rawValue
-    }
-    
-    static func == (lhs: GenericIdentifier<T>, rhs: GenericIdentifier<T>) -> Bool {
-        return lhs.rawValue == rhs.rawValue
-    }
+func reduce(_ state: State, with action: Action) -> State {
+    return State(
+        teamList: reduce(state.teamList, with: action)
+    )
 }
+

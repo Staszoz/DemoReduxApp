@@ -36,18 +36,34 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NmE-Rn-9Ag"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-Zk-S21">
+                                <rect key="frame" x="177.5" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDu-Jl-hqr">
+                                <rect key="frame" x="20" y="325.5" width="335" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rDu-Jl-hqr" secondAttribute="trailing" constant="20" id="EMb-VD-nFM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="R4Y-8B-eEA" secondAttribute="bottom" id="GQB-H7-IoN"/>
+                            <constraint firstItem="rDu-Jl-hqr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kqj-K5-bP4"/>
+                            <constraint firstItem="9bv-Zk-S21" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LHB-CK-eYA"/>
+                            <constraint firstItem="rDu-Jl-hqr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="agn-PF-Hd0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R4Y-8B-eEA" secondAttribute="trailing" id="dOK-dG-XyO"/>
                             <constraint firstItem="R4Y-8B-eEA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fnh-Yk-dIe"/>
+                            <constraint firstItem="9bv-Zk-S21" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oFo-uv-mpg"/>
                             <constraint firstItem="R4Y-8B-eEA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wCI-5d-R27"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="72j-Sp-Uur"/>
                     <connections>
+                        <outlet property="errorLabel" destination="rDu-Jl-hqr" id="KYP-zl-anS"/>
+                        <outlet property="indicatorView" destination="9bv-Zk-S21" id="26c-xW-weI"/>
                         <outlet property="tableView" destination="R4Y-8B-eEA" id="yXd-dJ-JZF"/>
                     </connections>
                 </viewController>

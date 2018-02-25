@@ -15,6 +15,13 @@
 		85F0C8302042096A00FD5602 /* RidersReduxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C82F2042096A00FD5602 /* RidersReduxTests.swift */; };
 		85F0C83D20420C1700FD5602 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C83C20420C1700FD5602 /* TeamsViewController.swift */; };
 		85F0C8402042100600FD5602 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C83F2042100600FD5602 /* State.swift */; };
+		85F0C8432042E06500FD5602 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C8422042E06500FD5602 /* Team.swift */; };
+		85F0C8452042E0A800FD5602 /* TeamListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C8442042E0A800FD5602 /* TeamListState.swift */; };
+		85F0C8482042E2D000FD5602 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C8472042E2D000FD5602 /* Action.swift */; };
+		85F0C84A2042E2E300FD5602 /* TeamListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C8492042E2E300FD5602 /* TeamListAction.swift */; };
+		85F0C84E2042E36C00FD5602 /* TeamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C84D2042E36C00FD5602 /* TeamsResponse.swift */; };
+		85F0C8512042E64000FD5602 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C8502042E64000FD5602 /* Store.swift */; };
+		85F0C8532042EED700FD5602 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C8522042EED700FD5602 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,13 @@
 		85F0C8312042096A00FD5602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85F0C83C20420C1700FD5602 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		85F0C83F2042100600FD5602 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		85F0C8422042E06500FD5602 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		85F0C8442042E0A800FD5602 /* TeamListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListState.swift; sourceTree = "<group>"; };
+		85F0C8472042E2D000FD5602 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		85F0C8492042E2E300FD5602 /* TeamListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListAction.swift; sourceTree = "<group>"; };
+		85F0C84D2042E36C00FD5602 /* TeamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsResponse.swift; sourceTree = "<group>"; };
+		85F0C8502042E64000FD5602 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		85F0C8522042EED700FD5602 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,10 @@
 		85F0C8162042096900FD5602 /* RidersRedux */ = {
 			isa = PBXGroup;
 			children = (
+				85F0C84F2042E63700FD5602 /* Store */,
+				85F0C84C2042E35800FD5602 /* Network */,
+				85F0C8462042E2BA00FD5602 /* Actions */,
+				85F0C8412042E04300FD5602 /* Entity */,
 				85F0C83E20420FFB00FD5602 /* State */,
 				85F0C83A20420BC200FD5602 /* Presentation */,
 				85F0C8172042096900FD5602 /* AppDelegate.swift */,
@@ -122,8 +140,51 @@
 			isa = PBXGroup;
 			children = (
 				85F0C83F2042100600FD5602 /* State.swift */,
+				85F0C8442042E0A800FD5602 /* TeamListState.swift */,
 			);
 			path = State;
+			sourceTree = "<group>";
+		};
+		85F0C8412042E04300FD5602 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				85F0C8422042E06500FD5602 /* Team.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		85F0C8462042E2BA00FD5602 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				85F0C8472042E2D000FD5602 /* Action.swift */,
+				85F0C8492042E2E300FD5602 /* TeamListAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		85F0C84B2042E34600FD5602 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				85F0C84D2042E36C00FD5602 /* TeamsResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		85F0C84C2042E35800FD5602 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				85F0C84B2042E34600FD5602 /* Response */,
+				85F0C8522042EED700FD5602 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		85F0C84F2042E63700FD5602 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				85F0C8502042E64000FD5602 /* Store.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +290,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F0C8532042EED700FD5602 /* NetworkService.swift in Sources */,
+				85F0C84A2042E2E300FD5602 /* TeamListAction.swift in Sources */,
 				85F0C8202042096900FD5602 /* RidersRedux.xcdatamodeld in Sources */,
 				85F0C83D20420C1700FD5602 /* TeamsViewController.swift in Sources */,
 				85F0C8182042096900FD5602 /* AppDelegate.swift in Sources */,
+				85F0C8432042E06500FD5602 /* Team.swift in Sources */,
+				85F0C8512042E64000FD5602 /* Store.swift in Sources */,
+				85F0C8482042E2D000FD5602 /* Action.swift in Sources */,
+				85F0C84E2042E36C00FD5602 /* TeamsResponse.swift in Sources */,
+				85F0C8452042E0A800FD5602 /* TeamListState.swift in Sources */,
 				85F0C8402042100600FD5602 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

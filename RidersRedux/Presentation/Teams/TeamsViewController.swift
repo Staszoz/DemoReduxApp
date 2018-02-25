@@ -25,9 +25,20 @@ class TeamsPresenter: Presenter {
         case .none:
             internalState = .loading
         case .teams(let newTeams):
-            internalState = .teams(newTeams.map { TeamsViewController.Props.Team(name: $0.name, uid: $0.uid, onSelect: { (controller) in
-                print()
-            })} )
+            internalState = .teams(newTeams.map { team in
+                TeamsViewController.Props.Team(name: team.name, uid: team.uid, onSelect: { [weak self] controller in
+                    guard
+                        let strongSelf = self,
+                        let ridersVC = controller as? RidersOfTeamViewController
+                    else { return }
+                
+                    let presenter = RidersOfTeamPresenter(controller: ridersVC, store: strongSelf.store)
+                    strongSelf.store.addObserver(presenter: presenter)
+                    strongSelf.store.dispatch(action: BeginLoadingRidersOfTeam(team: team))
+                    }
+                )
+            }
+            )
         case .error(let errorMsg):
             internalState = .error(errorMsg)
         }
@@ -81,6 +92,24 @@ class TeamsViewController: UIViewController {
             indicatorView.stopAnimating()
             errorLabel.isHidden = false
             tableView?.isHidden = true
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch props.state {
+        case .teams(let teams):
+            if segue.identifier == "showRidersOfTeam",
+                let cell = sender as? UITableViewCell,
+                let indexPath = tableView?.indexPath(for: cell),
+                let action = teams[indexPath.row].onSelect
+            {
+                action(segue.destination)
+            }
+                
+        default: return
         }
     }
 }

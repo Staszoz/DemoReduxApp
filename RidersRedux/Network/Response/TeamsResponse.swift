@@ -11,3 +11,9 @@ import Foundation
 struct TeamsResponse: Codable {
     let items: [Team]
 }
+
+struct RidersOfTeamResponse: Codable {
+    let items: [Rider]
+}
+
+

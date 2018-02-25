@@ -11,12 +11,14 @@ import Foundation
 
 struct State {
     let teamList: TeamListState
+    let ridersOfTeam: RidersOfTeamState
 }
 
 
 func reduce(_ state: State, with action: Action) -> State {
     return State(
-        teamList: reduce(state.teamList, with: action)
+        teamList: reduce(state.teamList, with: action),
+        ridersOfTeam: reduce(state.ridersOfTeam, with: action)
     )
 }
 

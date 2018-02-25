@@ -16,7 +16,7 @@ protocol Presenter: class {
 
 final class Store {
     private var observers = [ObjectIdentifier: Presenter]()
-    private(set) var state = State(teamList: TeamListState.initial)
+    private(set) var state = State(teamList: TeamListState.initial, ridersOfTeam: RidersOfTeamState.initial)
     
     
     func dispatch(action: Action) {

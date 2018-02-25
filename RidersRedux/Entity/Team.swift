@@ -17,4 +17,6 @@ final class Team: Codable {
         self.uid = uid
         self.name = name
     }
+    
+    static let empty = Team(uid: "", name: "")
 }
